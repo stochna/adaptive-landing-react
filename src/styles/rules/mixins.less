@@ -229,19 +229,23 @@
   }
   .slider__icon {
     @media @phone {
+      @padding: 10px;
+
       .squared(#phone[slider-icon-size]);
 
       img {
-        @size: calc(#phone[slider-icon-size] - 26px);
+        @size: calc(#phone[slider-icon-size] - @padding*2);
 
         .squared(@size);
       }
     }
     @media @tablet {
+      @padding: 15px;
+
       .squared(#tablet[slider-icon-size]);
 
       img {
-        @size: calc(#tablet[slider-icon-size] - 30px);
+        @size: calc(#tablet[slider-icon-size] - @padding*2);
 
         .squared(@size);
       }
