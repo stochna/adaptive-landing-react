@@ -1,0 +1,561 @@
+@import 'vars';
+@import 'pallette';
+
+.hover() {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.default-transition(@prop: all) {
+  transition: @prop .2s ease-out;
+}
+
+.scrollbar-hidden() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.background-blured() {
+  background: rgba(243, 243, 243, .5);
+  backdrop-filter: blur(5px);
+}
+
+.squared(@size) {
+  height: @size;
+  width: @size;
+}
+.rounded-corners(@height : 3000px) {
+  border-radius: calc(@height / 2);
+}
+.centered-content() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1() {
+  font-weight: #font-weights[bold];
+  line-height: 107%;
+}
+.h2() {
+  font-weight: #font-weights[bold];
+}
+.h3() {
+  font-weight: #font-weights[bold];
+}
+.regular() {
+  font-weight: #font-weights[regular];
+}
+
+#with-media() {
+  .h1() {
+    @media @phone {
+      font-size: #phone.font-sizes[bigger];
+    }
+    @media @tablet {
+      font-size: #tablet.font-sizes[bigger];
+    }
+    @media @desktop {
+      font-size: #desktop.font-sizes[bigger];
+    }
+    @media @macbook {
+      font-size: #macbook.font-sizes[bigger];
+    }
+  }
+  .h2() {
+    @media @phone {
+      font-size: #tablet.font-sizes[big];
+    }
+    @media @tablet {
+      font-size: #tablet.font-sizes[big];
+    }
+    @media @desktop {
+      font-size: #desktop.font-sizes[big];
+    }
+    @media @macbook {
+      font-size: #macbook.font-sizes[big];
+    }
+  }
+  .h3() {
+    @media @phone {
+      font-size: #phone.font-sizes[medium];
+    }
+    @media @tablet {
+      font-size: #tablet.font-sizes[medium];
+    }
+    @media @desktop {
+      font-size: #desktop.font-sizes[medium];
+    }
+    @media @macbook {
+      font-size: #macbook.font-sizes[medium];
+    }
+  }
+  .regular() {
+    @media @phone {
+      font-size: #phone.font-sizes[small];
+    }
+    @media @tablet {
+      font-size: #tablet.font-sizes[small];
+    }
+    @media @desktop {
+      font-size: #desktop.font-sizes[small];
+    }
+    @media @macbook {
+      font-size: #macbook.font-sizes[small];
+    }
+  }
+
+  .navbar() {
+    @media @phone {
+      @margin: 16px;
+      @switcher-height: 50px;
+
+      &__container {
+        height: calc(@margin*2 + @switcher-height);
+        width: auto;
+        overflow: hidden;
+
+        background: transparent;
+
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        z-index: 100;
+
+        .default-transition(height);
+
+        &_open {
+          &_true {
+            width: 100%;
+            background: @accent-light;
+
+            .navbar__link {
+              display: block;
+            }
+          }
+          &_false {
+          }
+        }
+      }
+      &__switcher {
+        margin: @margin @margin @margin auto;
+
+        .hover();
+      }
+      &__link {
+        padding: calc(@margin + 10px) #phone[outer-margin];
+        box-sizing: border-box;
+
+        display: none;
+
+        .hover();
+
+        &:hover, &:active {
+          font-weight: #font-weights[bold];
+        }
+      }
+    }
+    @media @tablet {
+      &__container {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: 100;
+
+        height: #tablet[navbar-height];
+        width: 100%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      &__switcher {
+        display: none;
+      }
+      &__link {
+        color: @accent-light;
+
+        .hover();
+
+        &_active {
+          &_true {
+            font-weight: #font-weights[bold];
+          }
+        }
+      }
+    }
+    @media @desktop {
+      &__container {
+        height: #desktop[navbar-height];
+
+        justify-content: flex-end;
+        gap: #desktop[navbar-gap];
+      }
+      &__link {
+        &:last-of-type {
+          margin-right: #desktop[navbar-gap];
+        }
+      }
+    }
+    @media @macbook {
+      &__container {
+        height: #macbook[navbar-height];
+
+        gap: #macbook[navbar-gap];
+      }
+      &__link {
+        &:last-of-type {
+          margin-right: #macbook[navbar-gap];
+        }
+      }
+    }
+  }
+
+  .slider__list {
+    @media @phone {
+      height: #phone[slider-icon-size];
+    }
+    @media @tablet {
+      height: #tablet[slider-icon-size];
+    }
+  }
+  .slider__icon {
+    @media @phone {
+      .squared(#phone[slider-icon-size]);
+
+      img {
+        @size: calc(#phone[slider-icon-size] - 26px);
+
+        .squared(@size);
+      }
+    }
+    @media @tablet {
+      .squared(#tablet[slider-icon-size]);
+
+      img {
+        @size: calc(#tablet[slider-icon-size] - 30px);
+
+        .squared(@size);
+      }
+    }
+  }
+
+  .button() {
+    @media @phone {
+      height: #phone[button-height];
+      width: #phone[button-width];
+
+      background: @accent-dark;
+      color: @primary;
+    }
+    @media @only-tablet {
+      height: #tablet[button-height];
+      width: #tablet[button-width];
+
+      background: @accent-dark;
+      color: @primary;
+    }
+    @media @desktop {
+      height: #desktop[button-height];
+      width: #desktop[button-width];
+
+      font-weight: #font-weights[bold];
+    }
+    @media @macbook {
+      height: #macbook[button-height];
+      width: #macbook[button-width];
+    }
+  }
+
+  .card__container() {
+    @media @phone {
+      width: #phone[card-container-width];
+    }
+    @media @tablet {
+      width: #tablet[card-container-width];
+    }
+    @media @desktop {
+      width: #desktop[card-container-width];
+    }
+  }
+  .card__description() {
+    @media @phone {
+      margin: 0 #phone[card-description-horiz-margin] 0;
+    }
+    @media @tablet {
+      margin: 0 #tablet[card-description-horiz-margin] 0;
+    }
+    @media @desktop {
+      margin: 0 #desktop[card-description-horiz-margin] 0;
+    }
+  }
+  .card__photo() {
+    @media @phone {
+      width: 360px;
+    }
+    @media @tablet {
+      width: 370px;
+    }
+    @media @desktop {
+      width: 380px;
+    }
+  }
+
+  .filter__container {
+    @media @phone {
+      height: #phone[button-height] + @button-border-width*2;
+    }
+    @media @tablet {
+      height: #tablet[button-height] + @button-border-width*2;
+    }
+    @media @desktop {
+      height: #desktop[button-height] + @button-border-width*2;
+    }
+    @media @macbook {
+      height: #macbook[button-height] + @button-border-width*2;
+    }
+  }
+
+  .page() {
+    @media @phone {
+      min-height: #phone[page-min-height];
+
+      grid-template-columns: 0 #phone[outer-margin] #phone[content-width] #phone[outer-margin] 0;
+      grid-template-rows: #phone[navbar-height] max-content 1fr  #macbook[footer-height] 60px;
+    }
+    @media @tablet {
+      min-height: #tablet[page-min-height];
+
+      grid-template-columns: 1fr #tablet[outer-margin] #tablet[content-width] #tablet[outer-margin] 1fr;
+      grid-template-rows: #tablet[navbar-height] max-content 1fr  #macbook[footer-height] 60px;
+    }
+    @media @desktop {
+      min-height: #desktop[page-min-height];
+
+      grid-template-columns: 1fr #desktop[outer-margin] #desktop[content-width] #desktop[outer-margin] 1fr;
+      grid-template-rows: #desktop[navbar-height] max-content 1fr  #macbook[footer-height] 20px;
+    }
+    @media @macbook {
+      min-height: #macbook[page-min-height];
+
+      grid-template-columns: 1fr #macbook[outer-margin] #macbook[content-width] #macbook[outer-margin] 1fr;
+      grid-template-rows: #macbook[navbar-height] max-content 1fr #macbook[footer-height] 20px;
+    }
+  }
+  .page__header() {
+    @media @phone {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px 0;
+
+      margin: 0 0 46px;
+    }
+    @media @tablet {
+      margin: 10px 0 50px;
+    }
+    @media @desktop {
+      margin: 16px 0 50px;
+    }
+    @media @macbook {
+      margin: 20px 0 50px;
+    }
+  }
+  .page__button-group() {
+    @media @phone {
+      flex-direction: column;
+    }
+    @media @tablet {
+      flex-direction: column;
+    }
+    @media @desktop {
+      flex-direction: row;
+    }
+  }
+  .page__form() {
+      @media @phone {
+        height: #phone[form-height];
+        width: #phone[form-width];
+
+        padding: 40px 30px;
+
+        .button {
+          color: @primary;
+        }
+      }
+      @media @tablet {
+        height: #tablet[form-height];
+        width: #tablet[form-width];
+
+        padding: 36px;
+
+        .button {
+          color: @primary;
+        }
+      }
+      @media @desktop {
+        width: #desktop[form-width];
+
+        padding: 40px;
+
+        .button {
+          color: @accent-dark;
+
+          &:hover {
+            color: @primary;
+          }
+        }
+      }
+      @media @macbook {
+        width: #macbook[form-width];
+      }
+    }
+
+  .page_main() {
+    @media @phone {
+      min-height: #phone[page-main-min-height];
+    }
+    @media @tablet {
+      min-height: #tablet[page-main-min-height];
+    }
+    @media @desktop {
+      min-height: #desktop[page-main-min-height];
+    }
+    @media @macbook {
+      min-height: #macbook[page-main-min-height];
+    }
+  }
+  .page_main___page__body() {
+    @media @phone {
+      grid-template-columns: #phone[content-area-width] 0px;
+      grid-gap: 46px 0;
+    }
+    @media @tablet {
+      grid-template-columns: #tablet[content-area-width] 1fr;
+      grid-gap: 60px 0;
+    }
+    @media @desktop {
+      grid-template-columns: #desktop[content-area-width] 1fr;
+    }
+    @media @macbook {
+      grid-template-columns: #macbook[content-area-width] 1fr;
+    }
+  }
+  .page_main___switchers-group() {
+    @media @phone {
+      display: none;
+    }
+    @media @tablet {
+      display: none;
+    }
+    @media @desktop {
+      display: flex;
+    }
+  }
+
+  .page_welcome___page__body() {
+    @media @phone {
+      height: auto;
+
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, max-content);
+      grid-gap: 40px;
+
+      grid-template-areas:
+        'welcome-page__photo'
+        'welcome-page__message'
+        'welcome-page__button';
+    }
+    @media @tablet {
+      grid-template-columns: 1fr max-content;
+      grid-template-rows: max-content 60px 60px;
+      grid-gap: 40px 4%;
+
+      grid-template-areas:
+        'welcome-page__message welcome-page__photo'
+        'welcome-page__message welcome-page__photo'
+        '. welcome-page__button';
+    }
+    @media @desktop {
+      grid-template-columns: 420px 1fr max-content;
+      grid-template-rows: max-content 60px max-content;
+      grid-gap: 0;
+
+      grid-template-areas:
+        'welcome-page__message . welcome-page__photo'
+        '. . .'
+        '. . welcome-page__button';
+    }
+  }
+  .page_welcome___page__photo() {
+    @media @phone {
+      height: #phone[page-welcome-photo-height];
+      width: #phone[page-welcome-photo-width];
+    }
+    @media @tablet {
+      height: #tablet[page-welcome-photo-height];
+      width: #tablet[page-welcome-photo-width];
+    }
+    @media @desktop {
+      height: #desktop[page-welcome-photo-height];
+      width: #desktop[page-welcome-photo-width];
+    }
+    @media @macbook {
+      height: #macbook[page-welcome-photo-height];
+      width: #macbook[page-welcome-photo-width];
+    }
+  }
+  .page_welcome___page__body___div() {
+    @media @phone {
+      margin: 0 0 18px 0;
+    }
+    @media @tablet {
+      margin: 0 0 28px 0;
+    }
+  }
+
+  .page_courses___card__container() {
+    @default-gap-1: 26px;
+    @default-gap-2: 16px;
+    @default-gap-3: @default-gap-2;
+
+    @button-height: 60px;
+
+    @media @phone {
+      grid-template-rows: max-content @default-gap-1 max-content @default-gap-2 max-content @default-gap-3 50px minmax(36px, 1fr);
+    }
+    @media @tablet {
+      grid-template-rows: max-content @default-gap-1 max-content @default-gap-2 max-content @default-gap-3 @button-height minmax(36px, 1fr);
+    }
+    @media @desktop {
+      grid-template-rows: max-content 20px max-content 13px max-content 18px @button-height minmax(38px, 1fr);
+    }
+    @media @macbook {
+      min-height: 620px;
+
+      grid-template-rows: max-content 20px max-content 13px max-content 1fr @button-height minmax(40px, 1fr);
+    }
+  }
+
+  .page_teachers___card__container {
+    @default-gap-1: 20px;
+    @default-gap-2: 13px;
+
+    @media @phone {
+      grid-template-rows: max-content @default-gap-1 max-content @default-gap-2 max-content 0 0 minmax(38px, 1fr);
+    }
+    @media @tablet {
+      grid-template-rows: max-content @default-gap-1 max-content @default-gap-2 max-content 0 0 minmax(42px, 1fr);
+    }
+    @media @desktop {
+      grid-template-rows: max-content @default-gap-1 max-content @default-gap-2 max-content 0 0 minmax(48px, 1fr);
+    }
+  }
+}
