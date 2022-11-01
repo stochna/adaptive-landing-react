@@ -12,7 +12,7 @@ body {
 }
 @media (max-width: 640px) {
   .App {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 @media (min-width: 641px) {
@@ -32,7 +32,7 @@ body {
 }
 @media (max-width: 640px) {
   .navbar__container {
-    height: calc(16px*2 + 50px);
+    height: calc(16px*2 + 46px);
     width: auto;
     overflow: hidden;
     background: transparent;
@@ -115,10 +115,19 @@ body {
   }
 }
 .slider__container {
-  max-width: 480px;
   display: grid;
   grid-template-rows: repeat(3, max-content);
   grid-gap: 20px;
+}
+@media (max-width: 640px) {
+  .slider__container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 641px) {
+  .slider__container {
+    max-width: 480px;
+  }
 }
 .slider__block {
   display: none;
@@ -133,7 +142,7 @@ body {
 }
 @media (max-width: 640px) {
   .slider__list {
-    height: 56px;
+    height: 46px;
   }
 }
 @media (min-width: 641px) {
@@ -155,12 +164,12 @@ body {
 }
 @media (max-width: 640px) {
   .slider__icon {
-    height: 56px;
-    width: 56px;
+    height: 46px;
+    width: 46px;
   }
   .slider__icon img {
-    height: calc(56px - 10px*2);
-    width: calc(56px - 10px*2);
+    height: calc(46px - 8px*2);
+    width: calc(46px - 8px*2);
   }
 }
 @media (min-width: 641px) {
@@ -183,7 +192,7 @@ body {
 }
 @media (max-width: 640px) {
   .slider__title {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 @media (min-width: 641px) {
@@ -327,7 +336,7 @@ body {
 }
 @media (max-width: 640px) {
   .card__title {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 @media (min-width: 641px) {
@@ -378,7 +387,7 @@ body {
 }
 @media (max-width: 640px) {
   .card__price {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 @media (min-width: 641px) {
@@ -549,8 +558,6 @@ body {
 }
 .page__list {
   max-width: 100%;
-  padding: 7px;
-  box-sizing: border-box;
   display: flex;
   align-items: stretch;
   flex-wrap: nowrap;
@@ -567,7 +574,6 @@ body {
 .page__form {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
-  grid-template-rows: repeat(2, max-content) 1fr max-content;
   grid-template-areas: 'form__field_1 form__field_1 form__field_1' 'form__field_2 form__field_2 form__field_2' '. . .' '. form__button .';
   box-sizing: border-box;
   position: relative;
@@ -579,6 +585,7 @@ body {
   .page__form {
     height: max-content;
     width: minmax(0, 1fr);
+    grid-template-rows: repeat(2, max-content) 20px max-content;
     padding: 40px 30px;
   }
   .page__form .button {
@@ -589,6 +596,7 @@ body {
   .page__form {
     height: 440px;
     width: minmax(0, 1fr);
+    grid-template-rows: repeat(2, max-content) 1fr max-content;
     padding: 36px;
   }
   .page__form .button {
@@ -629,7 +637,7 @@ body {
 }
 @media (max-width: 640px) {
   .page__form label span {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 @media (min-width: 641px) {
@@ -658,7 +666,7 @@ body {
 }
 @media (max-width: 640px) {
   .page__form label input {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 @media (min-width: 641px) {
@@ -716,7 +724,7 @@ body {
 }
 @media (max-width: 640px) {
   .page_main .page__title {
-    font-size: 60px;
+    font-size: 58px;
   }
 }
 @media (min-width: 641px) {

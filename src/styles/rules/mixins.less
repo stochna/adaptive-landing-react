@@ -111,7 +111,7 @@
   .navbar() {
     @media @phone {
       @margin: 16px;
-      @switcher-height: 50px;
+      @switcher-height: 46px;
 
       &__container {
         height: calc(@margin*2 + @switcher-height);
@@ -219,6 +219,14 @@
     }
   }
 
+  .slider__container() {
+    @media @phone {
+      max-width: 100%;
+    }
+    @media @tablet {
+      max-width: 480px;
+    }
+  }
   .slider__list {
     @media @phone {
       height: #phone[slider-icon-size];
@@ -229,7 +237,7 @@
   }
   .slider__icon {
     @media @phone {
-      @padding: 10px;
+      @padding: 8px;
 
       .squared(#phone[slider-icon-size]);
 
@@ -388,6 +396,8 @@
         height: #phone[form-height];
         width: #phone[form-width];
 
+        grid-template-rows: repeat(2, max-content) 20px max-content;
+
         padding: 40px 30px;
 
         .button {
@@ -397,6 +407,8 @@
       @media @tablet {
         height: #tablet[form-height];
         width: #tablet[form-width];
+
+        grid-template-rows: repeat(2, max-content) 1fr max-content;
 
         padding: 36px;
 

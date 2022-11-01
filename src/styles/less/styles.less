@@ -29,11 +29,11 @@ body {
 }
 .slider {
   &__container {
-    max-width: 480px;
-
     display: grid;
     grid-template-rows: repeat(3, max-content);
     grid-gap: 20px;
+
+    #with-media.slider__container();
   }
   &__block {
     display: none;
@@ -284,9 +284,6 @@ body {
   &__list {
     max-width: 100%;
 
-    padding: 7px;
-    box-sizing: border-box;
-
     display: flex;
     align-items: stretch;
     flex-wrap: nowrap;
@@ -302,7 +299,6 @@ body {
   &__form {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
-    grid-template-rows: repeat(2, max-content) 1fr max-content;
 
     grid-template-areas:
      'form__field_1 form__field_1 form__field_1'
