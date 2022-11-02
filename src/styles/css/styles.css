@@ -17,7 +17,7 @@ body {
 }
 @media (min-width: 641px) {
   .App {
-    font-size: 23px;
+    font-size: 22px;
   }
 }
 @media (min-width: 1008px) {
@@ -600,8 +600,8 @@ body {
 }
 @media (min-width: 641px) {
   .page__form {
-    height: 440px;
-    width: minmax(0, 1fr);
+    height: 420px;
+    width: 520px;
     grid-template-rows: repeat(2, max-content) 1fr max-content;
     padding: 36px;
   }
@@ -903,8 +903,8 @@ body {
 }
 @media (min-width: 641px) {
   .page_welcome .page__photo img {
-    height: 440px;
-    width: 580px;
+    height: 370px;
+    width: 410px;
   }
 }
 @media (min-width: 1008px) {
