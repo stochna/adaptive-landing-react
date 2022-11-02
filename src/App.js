@@ -135,7 +135,9 @@ const App = () => {
     join: {
       component: Join,
       ref: useRef(null),
-      selfProps: null,
+      selfProps: {
+        windowSize,
+      },
     },
   };
 

@@ -311,13 +311,13 @@
   }
   .card__photo() {
     @media @phone {
-      width: 360px;
+      width: #phone[card-container-width];
     }
     @media @tablet {
-      width: 370px;
+      width: #tablet[card-container-width];
     }
     @media @desktop {
-      width: 380px;
+      width: #desktop[card-container-width];
     }
   }
 
@@ -398,10 +398,18 @@
 
         grid-template-rows: repeat(2, max-content) 20px max-content;
 
-        padding: 40px 30px;
+        padding: 30px 20px;
 
         .button {
-          color: @primary;
+          width: calc(#phone[button-height] + 40px);
+
+          box-sizing: border-box;
+
+          .rounded-corners();
+
+          img {
+            height: 40px;
+          }
         }
       }
       @media @tablet {

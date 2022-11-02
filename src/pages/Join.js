@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import BG5 from './../assets/backgrounds/BG5.png';
+import Join0 from './../assets/icons/Join0.png';
 import Button from './../components/Button';
 
 const Join = props => {
   const {
     thisRef,
+    windowSize,
   } = props;
 
   const isValid = field => {
@@ -114,7 +116,9 @@ const Join = props => {
             ))
           }
           <Button
-            value='Записатися'
+            value={windowSize.width <= 640 ? <img
+              alt=''
+              src={Join0}></img> : 'Записатися'}
             selfClassName='form__button'
             clickHandler={submitHandler}
           />
