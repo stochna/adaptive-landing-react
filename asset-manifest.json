@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/adaptive-landing-react/static/css/main.513786e9.css",
+    "main.css": "/adaptive-landing-react/static/css/main.10ed7564.css",
     "main.js": "/adaptive-landing-react/static/js/main.9399dbbc.js",
     "static/media/BG4.png": "/adaptive-landing-react/static/media/BG4.b0a6a8553a2cb13799ae.png",
     "static/media/BG0.png": "/adaptive-landing-react/static/media/BG0.b188d283323465e3d3e7.png",
@@ -20,11 +20,11 @@
     "static/media/Course3.jpg": "/adaptive-landing-react/static/media/Course3.d4408e39b2f5674b56f6.jpg",
     "static/media/Teacher0.jpg": "/adaptive-landing-react/static/media/Teacher0.6955b79b2b2f7c48abe5.jpg",
     "index.html": "/adaptive-landing-react/index.html",
-    "main.513786e9.css.map": "/adaptive-landing-react/static/css/main.513786e9.css.map",
+    "main.10ed7564.css.map": "/adaptive-landing-react/static/css/main.10ed7564.css.map",
     "main.9399dbbc.js.map": "/adaptive-landing-react/static/js/main.9399dbbc.js.map"
   },
   "entrypoints": [
-    "static/css/main.513786e9.css",
+    "static/css/main.10ed7564.css",
     "static/js/main.9399dbbc.js"
   ]
 }
