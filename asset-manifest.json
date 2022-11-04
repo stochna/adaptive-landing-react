@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/adaptive-landing-react/static/css/main.10ed7564.css",
-    "main.js": "/adaptive-landing-react/static/js/main.9399dbbc.js",
+    "main.css": "/adaptive-landing-react/static/css/main.d4294a97.css",
+    "main.js": "/adaptive-landing-react/static/js/main.82f0ab55.js",
     "static/media/BG4.png": "/adaptive-landing-react/static/media/BG4.b0a6a8553a2cb13799ae.png",
     "static/media/BG0.png": "/adaptive-landing-react/static/media/BG0.b188d283323465e3d3e7.png",
     "static/media/BG3.png": "/adaptive-landing-react/static/media/BG3.53d6e90040e1824733e3.png",
@@ -15,16 +15,16 @@
     "static/media/Teacher3.jpg": "/adaptive-landing-react/static/media/Teacher3.4c0cabef93c8553b6da1.jpg",
     "static/media/Teacher1.jpg": "/adaptive-landing-react/static/media/Teacher1.2fd1ba7dbafa364d7e32.jpg",
     "static/media/Course4.jpg": "/adaptive-landing-react/static/media/Course4.5b39da846ebf0c68fdef.jpg",
-    "static/media/Welcome1.jpg": "/adaptive-landing-react/static/media/Welcome1.ca6de8ee964d33d11f76.jpg",
+    "static/media/Welcome0.jpg": "/adaptive-landing-react/static/media/Welcome0.ca6de8ee964d33d11f76.jpg",
     "static/media/Course2.jpg": "/adaptive-landing-react/static/media/Course2.aa1720e5c9be97da28ff.jpg",
     "static/media/Course3.jpg": "/adaptive-landing-react/static/media/Course3.d4408e39b2f5674b56f6.jpg",
     "static/media/Teacher0.jpg": "/adaptive-landing-react/static/media/Teacher0.6955b79b2b2f7c48abe5.jpg",
     "index.html": "/adaptive-landing-react/index.html",
-    "main.10ed7564.css.map": "/adaptive-landing-react/static/css/main.10ed7564.css.map",
-    "main.9399dbbc.js.map": "/adaptive-landing-react/static/js/main.9399dbbc.js.map"
+    "main.d4294a97.css.map": "/adaptive-landing-react/static/css/main.d4294a97.css.map",
+    "main.82f0ab55.js.map": "/adaptive-landing-react/static/js/main.82f0ab55.js.map"
   },
   "entrypoints": [
-    "static/css/main.10ed7564.css",
-    "static/js/main.9399dbbc.js"
+    "static/css/main.d4294a97.css",
+    "static/js/main.82f0ab55.js"
   ]
 }
