@@ -1,15 +1,11 @@
 import { useState, useRef } from 'react';
-import Teacher0 from './../assets/photos/Teacher0.jpg';
-import Teacher1 from './../assets/photos/Teacher1.jpg';
-import Teacher2 from './../assets/photos/Teacher2.jpg';
-import Teacher3 from './../assets/photos/Teacher3.jpg';
-import Teacher4 from './../assets/photos/Teacher4.jpg';
 import FilteredList from './../components/FilteredList';
 import Filter from './../components/Filter';
 
 const Teachers = props => {
   const {
     thisRef,
+    photos,
     setFilter,
   } = props;
 
@@ -22,7 +18,7 @@ const Teachers = props => {
         about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         isNative: true,
       },
-      img: Teacher0,
+      img: photos.Teacher0,
     },
     {
       id: 1,
@@ -31,7 +27,7 @@ const Teachers = props => {
         about: 'Quo aperiam numquam ad nesciunt mollitia in galisum numquam ab consequatur totam et quis autem et fuga laudantium.',
         isNative: false,
       },
-      img: Teacher1,
+      img: photos.Teacher1,
     },
     {
       id: 2,
@@ -40,7 +36,7 @@ const Teachers = props => {
         about: 'Et dolor voluptas et galisum iste est quasi impedit ut molestiae corrupti enim architecto ab voluptatem quod in culpa explicabo.',
         isNative: false,
       },
-      img: Teacher2,
+      img: photos.Teacher2,
     },
     {
       id: 3,
@@ -49,7 +45,7 @@ const Teachers = props => {
         about: 'Sunt debitis sit minus dolorem ea autem doloremque qui illo dolore ut repellat veritatis sit neque doloremque sit dolorem eaque.',
         isNative: true,
       },
-      img: Teacher3,
+      img: photos.Teacher3,
     },
     {
       id: 4,
@@ -58,7 +54,7 @@ const Teachers = props => {
         about: 'Aut omnis consectetur cum ipsa deserunt qui tempore nulla est voluptas iusto sit dolorem aliquid sit earum nulla',
         isNative: true,
       },
-      img: Teacher4,
+      img: photos.Teacher4,
     },
   ];
 

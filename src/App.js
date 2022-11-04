@@ -1,6 +1,10 @@
 import { useRef, useState, useEffect } from 'react';
 import './styles/css/styles.css';
+import * as backgrounds from './assets/backgrounds/backgrounds';
+import * as icons from './assets/icons/icons';
+import * as photos from './assets/photos/photos';
 import Navbar from './components/Navbar';
+import Loader from './components/Loader';
 import Main from './pages/Main';
 import Welcome from './pages/Welcome';
 import About from './pages/About';
@@ -18,6 +22,7 @@ const App = () => {
       width: 0,
     }
   );
+  const [areImagesLoaded, setAreImagesLoaded] = useState(false);
 
   const useWindowSize = () => {
     useEffect(() => {
@@ -33,7 +38,25 @@ const App = () => {
       updateSize();
     }, []);
   };
+  const useImageLoader = () => {
+    const images = [backgrounds, icons, photos].map(mod => Object.values(mod)).flat();
 
+    const loadImage = src => new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve();
+      img.src = src;
+    });
+
+    useEffect(() => {
+      Promise
+        .all(
+          Object
+            .entries(images)
+            .map(([, src]) => loadImage(src))
+          )
+        .then(() => setAreImagesLoaded(true));
+    }, []);
+  };
   const useSliderAutoPlay = (slidesCount, currentSlideID, setCurrentSlideID, playSpeed = 5000) => {
     useEffect(() => {
       const getNextSlideID = currentSlideID => {
@@ -96,18 +119,23 @@ const App = () => {
       component: Main,
       ref: useRef(null),
       selfProps: {
+        backgrounds,
         useSliderAutoPlay,
       },
     },
     welcome: {
       component: Welcome,
       ref: useRef(null),
-      selfProps: null,
+      selfProps: {
+        photos,
+      },
     },
     about: {
       component: About,
       ref: useRef(null),
       selfProps: {
+        icons,
+        backgrounds,
         useSliderAutoPlay,
       },
     },
@@ -115,6 +143,7 @@ const App = () => {
       component: Courses,
       ref: useRef(null),
       selfProps: {
+        photos,
         setFilter,
       },
     },
@@ -122,6 +151,8 @@ const App = () => {
       component: Reviews,
       ref: useRef(null),
       selfProps: {
+        icons,
+        backgrounds,
         useSliderAutoPlay,
       },
     },
@@ -129,6 +160,7 @@ const App = () => {
       component: Teachers,
       ref: useRef(null),
       selfProps: {
+        photos,
         setFilter,
       },
     },
@@ -137,6 +169,8 @@ const App = () => {
       ref: useRef(null),
       selfProps: {
         windowSize,
+        icons,
+        backgrounds,
       },
     },
   };
@@ -146,14 +180,17 @@ const App = () => {
   };
 
   useWindowSize();
+  useImageLoader();
 
   return (
+    areImagesLoaded ?
     <div
       ref={appRef}
       className='App'
     >
       <Navbar
         windowSize={windowSize}
+        icons={icons}
         scrollPageIntoView={scrollPageIntoView}
       />
       {
@@ -173,6 +210,10 @@ const App = () => {
         })
       }
     </div>
+    :
+    <Loader
+      icons={icons}
+    />
   );
 }
 

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import BG5 from './../assets/backgrounds/BG5.png';
-import Join0 from './../assets/icons/Join0.png';
 import Button from './../components/Button';
 
 const Join = props => {
   const {
     thisRef,
+    icons,
+    backgrounds,
     windowSize,
   } = props;
 
@@ -81,7 +81,7 @@ const Join = props => {
       className='page page_join page_with-bg-img'
       style={
         {
-          backgroundImage: `url(${BG5})`,
+          backgroundImage: `url(${backgrounds.BG5})`,
         }
       }
     >
@@ -118,7 +118,7 @@ const Join = props => {
           <Button
             value={windowSize.width <= 640 ? <img
               alt=''
-              src={Join0}></img> : 'Записатися'}
+              src={icons.Join0}></img> : 'Записатися'}
             selfClassName='form__button'
             clickHandler={submitHandler}
           />

@@ -1,9 +1,9 @@
-import Welcome1 from './../assets/photos/Welcome1.jpg';
 import Button from './../components/Button';
 
 const Welcome = props => {
   const {
     thisRef,
+    photos,
   } = props;
 
   const lorem = [`Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -43,7 +43,7 @@ const Welcome = props => {
         <div className='page__photo'>
           <img
             alt=''
-            src={Welcome1}
+            src={photos.Welcome0}
           ></img>
         </div>
         <div className='page__button'>

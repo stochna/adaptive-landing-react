@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import BG0 from './../assets/backgrounds/BG0.png';
-import BG1 from './../assets/backgrounds/BG1.png';
-import BG2 from './../assets/backgrounds/BG2.png';
 import Button from './../components/Button';
 
 const Main = props => {
   const {
     thisRef,
+    backgrounds,
     scrollPageIntoView,
     useSliderAutoPlay,
   } = props;
@@ -23,7 +21,7 @@ const Main = props => {
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
         enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         aliquip ex ea commodo consequat.`,
-      bg: BG0,
+      bg: backgrounds.BG0,
     },
     {
       id: 1,
@@ -33,7 +31,7 @@ const Main = props => {
         id luctus odio dui quis ante. Donec tortor justo, ullamcorper et tristique
         vel, congue sed purus. Pellentesque nec rhoncus nisl. Curabitur tincidunt
         ipsum volutpat feugiat rhoncus.`,
-      bg: BG1,
+      bg: backgrounds.BG1,
     },
     {
       id: 2,
@@ -43,7 +41,7 @@ const Main = props => {
         viverra est et leo pharetra, pulvinar convallis erat imperdiet. Nulla
         mollis elit vel quam bibendum, sed tempus tortor imperdiet. Nullam
         aliquam massa lorem, at eleifend magna cursus non.`,
-      bg: BG2,
+      bg: backgrounds.BG2,
     },
   ];
 

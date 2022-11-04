@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
-import Course0 from './../assets/photos/Course0.jpg';
-import Course1 from './../assets/photos/Course1.jpg';
-import Course2 from './../assets/photos/Course2.jpg';
-import Course3 from './../assets/photos/Course3.jpg';
-import Course4 from './../assets/photos/Course4.jpg';
 import Filter from './../components/Filter';
 import FilteredList from './../components/FilteredList';
 
 const Courses = props => {
   const {
     thisRef,
+    photos,
     setFilter,
     scrollPageIntoView,
   } = props;
@@ -25,7 +21,7 @@ const Courses = props => {
         lessonsPerWeekCount: 3,
         about: 'знайомство з рівнем',
       },
-      img: Course0,
+      img: photos.Course0,
     },
     {
       id: 1,
@@ -37,7 +33,7 @@ const Courses = props => {
         lessonsPerWeekCount: 3,
         about: 'опанування рівня',
       },
-      img: Course1,
+      img: photos.Course1,
     },
     {
       id: 2,
@@ -49,7 +45,7 @@ const Courses = props => {
         lessonsPerWeekCount: 3,
         about: 'максимум результату',
       },
-      img: Course2,
+      img: photos.Course2,
     },
     {
       id: 3,
@@ -61,7 +57,7 @@ const Courses = props => {
         lessonsPerWeekCount: 5,
         about: 'акцент на speaking',
       },
-      img: Course3,
+      img: photos.Course3,
     },
     {
       id: 4,
@@ -73,7 +69,7 @@ const Courses = props => {
         lessonsPerWeekCount: 1,
         about: 'акцент на tech',
       },
-      img: Course4,
+      img: photos.Course4,
     },
   ];
 

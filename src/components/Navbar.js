@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Navbar0 from './../assets/icons/Navbar0.png';
 
 const Navbar = props => {
   const {
     windowSize,
+    icons,
     scrollPageIntoView,
   } = props;
 
@@ -82,7 +82,7 @@ const Navbar = props => {
       >
         <img
           alt=''
-          src={Navbar0}
+          src={icons.Navbar0}
         ></img>
       </div>
       {

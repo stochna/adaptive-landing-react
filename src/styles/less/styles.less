@@ -242,6 +242,27 @@ body {
     }
   }
 }
+.loader {
+  &__container {
+    height: 100vh;
+    width: 100%;
+
+    background: @primary;
+
+    .centered-content();
+  }
+  &__icon {
+    @keyframes rotation {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    &_rotating {
+      animation: rotation .9s infinite linear;
+    }
+  }
+}
 
 .page {
   max-width: 100%;

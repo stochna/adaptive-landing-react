@@ -1,15 +1,11 @@
 import { useState } from 'react';
-import BG4 from './../assets/backgrounds/BG4.png';
-import Reviewer0 from './../assets/icons/Reviewer0.png';
-import Reviewer1 from './../assets/icons/Reviewer1.png';
-import Reviewer2 from './../assets/icons/Reviewer2.png';
-import Reviewer3 from './../assets/icons/Reviewer3.png';
-import Reviewer4 from './../assets/icons/Reviewer4.png';
 import Slider from './../components/Slider';
 
 const About = props => {
   const {
     thisRef,
+    icons,
+    backgrounds,
     useSliderAutoPlay,
   } = props;
 
@@ -22,7 +18,7 @@ const About = props => {
       message: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
         aliquam faucibus magna, quis mattis orci venenatis at. Nulla a ultrices
         lectus, nec hendrerit est.`,
-      icon: Reviewer0,
+      icon: icons.Reviewer0,
     },
     {
       id: 1,
@@ -30,7 +26,7 @@ const About = props => {
       message: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. `,
-      icon: Reviewer1,
+      icon: icons.Reviewer1,
     },
     {
       id: 2,
@@ -38,7 +34,7 @@ const About = props => {
       message: `Etiam sit amet enim vitae quam tincidunt congue eu vitae dolor.
         Vestibulum ac tempus nulla. Maecenas vel laoreet sem. Mauris efficitur
         ullamcorper turpis eget vehicula.`,
-      icon: Reviewer2,
+      icon: icons.Reviewer2,
     },
     {
       id: 3,
@@ -46,7 +42,7 @@ const About = props => {
       message: `Phasellus lorem ipsum, aliquet a dapibus in, facilisis sit amet leo.
         Donec scelerisque risus rutrum ligula tempor molestie. Nam eu malesuada est.
         Nulla sed magna elit.`,
-      icon: Reviewer3,
+      icon: icons.Reviewer3,
     },
     {
       id: 4,
@@ -54,7 +50,7 @@ const About = props => {
       message: `Duis facilisis efficitur justo, eu gravida lacus sodales eu. Sed
         vestibulum commodo risus nec volutpat. Sed euismod lectus sit amet eros
         imperdiet, eu efficitur tellus consectetur.`,
-      icon: Reviewer4,
+      icon: icons.Reviewer4,
     },
   ];
 
@@ -66,7 +62,7 @@ const About = props => {
       className='page page_reviews page_with-bg-img'
       style={
         {
-          backgroundImage: `url(${BG4})`,
+          backgroundImage: `url(${backgrounds.BG4})`,
         }
       }
     >
