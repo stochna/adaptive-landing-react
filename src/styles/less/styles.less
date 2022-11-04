@@ -249,6 +249,8 @@ body {
 
     background: @primary;
 
+    flex-direction: column;
+
     .centered-content();
   }
   &__icon {
@@ -260,6 +262,26 @@ body {
 
     &_rotating {
       animation: rotation .9s infinite linear;
+    }
+  }
+  &__message {
+    color: @accent-dark;
+
+    margin: 26px;
+
+    text-align: center;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+
+    display: none;
+
+    .regular();
+    #with-media.regular();
+
+    &_shown {
+      &_true {
+        display: block;
+      }
     }
   }
 }

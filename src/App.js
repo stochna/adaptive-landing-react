@@ -213,6 +213,7 @@ const App = () => {
     :
     <Loader
       icons={icons}
+      areImagesLoaded={areImagesLoaded}
     />
   );
 }

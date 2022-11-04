@@ -468,6 +468,7 @@ body {
   height: 100vh;
   width: 100%;
   background: #C4BEB3;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -479,6 +480,38 @@ body {
 }
 .loader__icon_rotating {
   animation: rotation 0.9s infinite linear;
+}
+.loader__message {
+  color: #010101;
+  margin: 26px;
+  text-align: center;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  display: none;
+  font-weight: 400;
+}
+@media (max-width: 640px) {
+  .loader__message {
+    font-size: 20px;
+  }
+}
+@media (min-width: 641px) {
+  .loader__message {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1008px) {
+  .loader__message {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1512px) {
+  .loader__message {
+    font-size: 24px;
+  }
+}
+.loader__message_shown_true {
+  display: block;
 }
 .page {
   max-width: 100%;
