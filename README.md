@@ -6,7 +6,7 @@ May be used as a template.
 ![Adaptive Landing Preview](https://user-images.githubusercontent.com/53754381/199247072-9572878a-efad-47bb-bfa4-743e16a1ddab.gif)
 
 ## Demo
-[Open demo](https://alevtinaa.github.io/adaptive-landing-react/).
+[Open demo](https://stochna.github.io/adaptive-landing-react/).
 
 ## Technologies
 App was designed using:
